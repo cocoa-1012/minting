@@ -5,5 +5,3 @@
 
 ### `npm install`
 ### `npm start`
-
-## Contributor `cocoa-1012` / `cocoa.pandaok@gmail.com`
