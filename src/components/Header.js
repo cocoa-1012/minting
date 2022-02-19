@@ -7,7 +7,7 @@ const Header = () => {
       <div className='logoImageWrapper'>
         <img src={logoImage} alt='' className='logoImage' />
       </div>
-      <p className='headerText'>MINT YOUR DRAGONZ</p>
+      <p className='headerText'>MINT YOUR Majestic</p>
     </div>
   );
 };
