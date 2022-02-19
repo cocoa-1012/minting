@@ -26,11 +26,12 @@
   width: 90%;
   background: #0d043061;
   margin: auto;
-  margin-top: 15vh;
+  /* margin-top: 15vh; */
   border-radius: 4px;
   padding: 20px 15px;
   border: 3px solid #4198fc;
   color: #fff;
+  height: fit-content;
 }
 .cardWrapper {
   position: relative;
@@ -50,11 +51,13 @@
   margin: auto;
   border-radius: 15px;
   color: #fff;
-  font-family: NasalizationRg-Regular;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
 }
 .card__content {
   margin-top: 20px;
-  font-family: NasalizationRg-Regular;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
 }
 .card__image {
   width: 120px;
@@ -73,7 +76,7 @@
 .card__name {
   font-size: 26px;
   text-transform: uppercase;
-  font-family: NasalizationRg-Regular;
+  font-family: 'Roboto', sans-serif;
 }
 .card__eggs {
   font-size: 23px;
@@ -104,7 +107,7 @@
   font-size: 26px;
 }
 .card__minButton {
-  background: #4198fc;
+  background: #4caf50;
   width: fit-content;
   padding-right: 30px;
   padding-left: 30px;
@@ -129,5 +132,11 @@
   .sliderItem {
     width: 250px;
     height: 250px;
+  }
+  .cardData {
+    padding-bottom: 5vh;
+  }
+  .content {
+    padding-top: 7vh;
   }
 }
