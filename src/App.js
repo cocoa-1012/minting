@@ -1,14 +1,12 @@
-import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Container} from 'react-bootstrap';
-import Minter from './Minter';
+import React from 'react';
+import { Container } from 'react-bootstrap';
+import Main from './components/Main';
 
 function App() {
-
   return (
-    <Container className="text-center generalContainer">
-      {/*<ParticlesContainer></ParticlesContainer> */}
-        <Minter></Minter>
+    <Container className='text-center generalContainer'>
+      <Main />
     </Container>
   );
 }

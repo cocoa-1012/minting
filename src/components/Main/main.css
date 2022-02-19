@@ -1,0 +1,20 @@
+.slider-wrapper {
+  height: 90vh !important;
+}
+.sliderItemsWrapper {
+  margin-top: 20px;
+}
+.sliderItem {
+  width: 250px;
+  height: 250px;
+}
+.mainContent {
+  display: flex;
+}
+.leftSidebar {
+  flex-basis: 30%;
+}
+.content {
+  flex-basis: 70%;
+  background: #fff;
+}

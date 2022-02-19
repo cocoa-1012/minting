@@ -2,12 +2,12 @@ import React from 'react';
 import img2 from '../../images/2.png';
 const Content = () => {
   return (
-    <div>
+    <div className='content'>
       <div>
         <p className='tagName'>Most Popular</p>
         <div>
           <p className='name'>Basic</p>
-          <div>
+          <div style={{ width: 300, height: 30, overflow: 'hidden' }}>
             <img src={img2} alt='' />
           </div>
           <p className='eggs'>3 Eggs</p>
