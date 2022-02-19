@@ -1,9 +1,8 @@
 import React from 'react';
-import img1 from '../../images/2.png';
-const Item = () => {
+const Item = ({ img }) => {
   return (
     <div className='sliderItem'>
-      <img src={img1} alt='' />
+      <img src={img} alt='' />
     </div>
   );
 };
