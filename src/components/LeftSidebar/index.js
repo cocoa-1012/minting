@@ -3,7 +3,7 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import useInnerSize from '../../hook/useInnerSize';
 import Item from '../Items/Item';
-const LeftSidebar = ({ setSelected, items }) => {
+const LeftSidebar = ({ setSelected, items, items2 }) => {
   if (items.length < 0) return null;
   return (
     <div className='leftSidebar'>
@@ -16,7 +16,7 @@ const LeftSidebar = ({ setSelected, items }) => {
           ))}
         </CarouselContainer>
         <CarouselContainer2>
-          {items.map((item) => (
+          {items2.map((item) => (
             <div key={Math.random()} onClick={() => setSelected(item)}>
               <Item img={item.image} />
             </div>
@@ -61,23 +61,13 @@ const CarouselContainer2 = ({ children }) => {
 
   if (width >= 768) {
     return (
-      <Carousel
-        {...settings}
-        axis={'vertical'}
-        centerSlidePercentage={100 / 3}
-        interval={3200}
-      >
+      <Carousel {...settings} axis={'vertical'} centerSlidePercentage={100 / 3}>
         {children}
       </Carousel>
     );
   }
   return (
-    <Carousel
-      {...settings}
-      axis={'horizontal'}
-      centerSlidePercentage={100}
-      interval={3200}
-    >
+    <Carousel {...settings} axis={'horizontal'} centerSlidePercentage={100}>
       {children}
     </Carousel>
   );
