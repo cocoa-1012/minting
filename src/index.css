@@ -9,14 +9,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-@font-face {
-  font-family: 'NasalizationRg-Regular';
-  font-style: normal;
-  font-weight: normal;
-  src: local('NasalizationRg-Regular'),
-    url('./font/nasalization.woff') format('woff');
-}
-
 .generalContainer {
   /* background-color: black; */
 }

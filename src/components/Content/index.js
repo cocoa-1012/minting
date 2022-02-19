@@ -5,6 +5,16 @@ const Content = ({ selected }) => {
   useEffect(() => {
     setCounter(selected.counter);
   }, [selected.counter]);
+
+  const increment = () => {
+    setCounter((prev) => prev + 1);
+  };
+  const decrement = () => {
+    if (counter > 1) {
+      setCounter((prev) => prev - 1);
+    }
+  };
+
   return (
     <div className='content'>
       <div className='cardWrapper'>
@@ -20,21 +30,15 @@ const Content = ({ selected }) => {
               <p className='card__price'>{selected.price / 10} ETH</p>
               <p className='card__text'>{selected.family}</p>
               <div className='card__counter'>
-                <div
-                  className='card__counter-item'
-                  onClick={() => setCounter((prev) => prev - 1)}
-                >
+                <div className='card__counter-item' onClick={decrement}>
                   -
                 </div>
                 <div className='card_counter-no'>{counter}</div>
-                <div
-                  className='card__counter-item'
-                  onClick={() => setCounter((prev) => prev + 1)}
-                >
+                <div className='card__counter-item' onClick={increment}>
                   +
                 </div>
               </div>
-              <p className='card__minButton'>mint</p>
+              <a href='https://www.youtube.com/' target='_blank' className='card__minButton btn btn-success' rel="noreferrer">mint</a>
             </div>
           </div>
         </div>

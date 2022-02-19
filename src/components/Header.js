@@ -1,14 +1,15 @@
-import { Container } from "react-bootstrap"
-
+import React from 'react';
+import logoImage from '../images/logo.png';
+import './Header.css';
 const Header = () => {
-    return (
-        <Container>
-            <header>
-                <h1>This is still in dev, bear with me please </h1>
-            </header>
-        </Container>
+  return (
+    <div className='header'>
+      <div className='logoImageWrapper'>
+        <img src={logoImage} alt='' className='logoImage' />
+      </div>
+      <p className='headerText'>MINT YOUR Majestic</p>
+    </div>
+  );
+};
 
-    )
-}
-
-export default Header
+export default Header;
