@@ -1,21 +1,24 @@
-import React, { useState } from 'react';
-import img2 from '../../images/2.png';
-const Content = () => {
+import React, { useEffect, useState } from 'react';
+
+const Content = ({ selected }) => {
   const [counter, setCounter] = useState(1);
+  useEffect(() => {
+    setCounter(selected.counter);
+  }, [selected.counter]);
   return (
     <div className='content'>
       <div className='cardWrapper'>
         <div className='cardData'>
           <div>
-            <p className='card__tagName'>Most Popular</p>
+            <p className='card__tagName'>{selected.tagName}</p>
             <div className='card__content'>
-              <p className='card__name'>Basic</p>
+              <p className='card__name'>{selected.name}</p>
               <div className='card__image'>
-                <img src={img2} alt='' />
+                <img src={selected.image} alt='' />
               </div>
-              <p className='card__eggs'>3 Eggs</p>
-              <p className='card__price'>0.07 ETH</p>
-              <p className='card__text'>1 random family</p>
+              <p className='card__eggs'>{selected.egss} Eggs</p>
+              <p className='card__price'>{selected.price / 10} ETH</p>
+              <p className='card__text'>{selected.family}</p>
               <div className='card__counter'>
                 <div
                   className='card__counter-item'

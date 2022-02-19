@@ -23,6 +23,7 @@
 .cardWrapper {
   width: 50%;
   background: #0d043061;
+  margin: auto;
   margin-top: 15vh;
   border-radius: 4px;
   padding: 20px 15px;
