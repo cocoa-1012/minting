@@ -5,7 +5,7 @@ import './main.css';
 
 const Main = () => {
   return (
-    <div className='mainContent '>
+    <div className='mainContent'>
       <LeftSidebar />
       <Content />
     </div>

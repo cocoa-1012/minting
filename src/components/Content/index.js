@@ -1,24 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import img2 from '../../images/2.png';
 const Content = () => {
+  const [counter, setCounter] = useState(1);
   return (
     <div className='content'>
-      <div>
-        <p className='tagName'>Most Popular</p>
-        <div>
-          <p className='name'>Basic</p>
-          <div style={{ width: 300, height: 30, overflow: 'hidden' }}>
-            <img src={img2} alt='' />
-          </div>
-          <p className='eggs'>3 Eggs</p>
-          <p className='price'>0.07 ETH</p>
-          <p className='text'>1 random family</p>
+      <div className='cardWrapper'>
+        <div className='cardData'>
           <div>
-            <div>-</div>
-            <div>1</div>
-            <div>+</div>
+            <p className='card__tagName'>Most Popular</p>
+            <div className='card__content'>
+              <p className='card__name'>Basic</p>
+              <div className='card__image'>
+                <img src={img2} alt='' />
+              </div>
+              <p className='card__eggs'>3 Eggs</p>
+              <p className='card__price'>0.07 ETH</p>
+              <p className='card__text'>1 random family</p>
+              <div className='card__counter'>
+                <div
+                  className='card__counter-item'
+                  onClick={() => setCounter((prev) => prev - 1)}
+                >
+                  -
+                </div>
+                <div className='card_counter-no'>{counter}</div>
+                <div
+                  className='card__counter-item'
+                  onClick={() => setCounter((prev) => prev + 1)}
+                >
+                  +
+                </div>
+              </div>
+              <p className='card__minButton'>mint</p>
+            </div>
           </div>
-          <button className='minButton'>min</button>
         </div>
       </div>
     </div>
