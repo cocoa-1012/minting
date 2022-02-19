@@ -34,7 +34,7 @@ const Content = ({ selected }) => {
                   +
                 </div>
               </div>
-              <p className='card__minButton'>mint</p>
+              <p className='card__minButton btn btn-success'>mint</p>
             </div>
           </div>
         </div>

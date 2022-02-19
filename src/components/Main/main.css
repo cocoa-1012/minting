@@ -103,6 +103,15 @@
   font-size: 20px;
   border-radius: 4px;
   cursor: pointer;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card__counter-item:hover {
+  background: #e91e63b5;
 }
 .card_counter-no {
   font-size: 26px;

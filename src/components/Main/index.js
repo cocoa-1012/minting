@@ -9,6 +9,7 @@ import img6 from '../../images/6.png';
 import img7 from '../../images/7.png';
 import img9 from '../../images/9.png';
 import Content from '../Content';
+import Header from '../Header';
 import LeftSidebar from '../LeftSidebar';
 import './main.css';
 
@@ -124,9 +125,12 @@ const Main = () => {
   }, []);
 
   return (
-    <div className='mainContent'>
-      <LeftSidebar setSelected={setSelected} items={ITEMS} />
-      <Content selected={selected} />
+    <div>
+      <Header />
+      <div className='mainContent'>
+        <LeftSidebar setSelected={setSelected} items={ITEMS} />
+        <Content selected={selected} />
+      </div>
     </div>
   );
 };
