@@ -1,0 +1,115 @@
+.slider-wrapper {
+  height: 90vh !important;
+}
+.sliderItemsWrapper {
+  margin-top: 20px;
+}
+.sliderItem {
+  width: 250px;
+  height: 250px;
+}
+.mainContent {
+  display: flex;
+  background-size: cover;
+  width: 100%;
+}
+.leftSidebar {
+  flex-basis: 30%;
+}
+.content {
+  flex-basis: 70%;
+  overflow: hidden;
+}
+.cardWrapper {
+  width: 50%;
+  background: #0d043061;
+  margin: auto;
+  margin-top: 15vh;
+  border-radius: 4px;
+  padding: 20px 15px;
+  border: 3px solid #4198fc;
+  color: #fff;
+}
+.cardWrapper {
+  position: relative;
+}
+
+.card__tagName {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  right: 0;
+  background: #4198fc;
+  width: fit-content;
+  padding-right: 30px;
+  padding-left: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin: auto;
+  border-radius: 15px;
+  color: #fff;
+  font-family: NasalizationRg-Regular;
+}
+.card__content {
+  margin-top: 20px;
+  font-family: NasalizationRg-Regular;
+}
+.card__image {
+  width: 120px;
+  height: 120px;
+  margin: auto;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card__name {
+  font-size: 26px;
+  text-transform: uppercase;
+  font-family: NasalizationRg-Regular;
+}
+.card__eggs {
+  font-size: 23px;
+}
+
+.card__price {
+  font-size: 21px;
+}
+.card__text {
+  font-size: 22px;
+}
+.card__counter {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+.card__counter-item {
+  background: #fff;
+  color: #000;
+  padding: 0px 10px;
+  font-size: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.card_counter-no {
+  font-size: 26px;
+}
+.card__minButton {
+  background: #4198fc;
+  width: fit-content;
+  padding-right: 30px;
+  padding-left: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: #fff;
+  border-radius: 20px;
+  margin: auto;
+  font-size: 20px;
+}

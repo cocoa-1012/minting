@@ -1,15 +1,21 @@
-import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Container} from 'react-bootstrap';
-import Minter from './Minter';
-
+import React from 'react';
+import { Container } from 'react-bootstrap';
+import Main from './components/Main';
+import bg from './images/content-bg.png';
 function App() {
-
   return (
-    <Container className="text-center generalContainer">
-      {/*<ParticlesContainer></ParticlesContainer> */}
-        <Minter></Minter>
-    </Container>
+    <div
+      style={{
+        backgroundImage: `url(${bg})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
+      <Container className='text-center generalContainer'>
+        <Main />
+      </Container>
+    </div>
   );
 }
 

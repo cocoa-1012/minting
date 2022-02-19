@@ -9,8 +9,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.generalContainer{
-  background-color: black;
+@font-face {
+  font-family: 'NasalizationRg-Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('NasalizationRg-Regular'),
+    url('./font/nasalization.woff') format('woff');
+}
+
+.generalContainer {
+  /* background-color: black; */
 }
 
 code {
@@ -18,13 +26,12 @@ code {
     monospace;
 }
 .particles-js {
-  
   width: 100%;
   height: 100%;
   background: grey;
   border: solid 1px blue;
 }
-.TitleMeta{
+.TitleMeta {
   font-family: 'PT+Serif:ital';
   color: #ffc107;
 }
@@ -36,10 +43,9 @@ code {
   border-bottom-color: white;
 }
 
-.MetaHeader small{
+.MetaHeader small {
   font-family: 'PT+Serif:ital';
   color: white;
- 
 }
 .Minter {
   position: fixed;
@@ -56,7 +62,6 @@ code {
   padding: 60px 100px;
   margin: 0 auto;
   text-align: left;
-
 }
 
 input {
@@ -75,7 +80,6 @@ input:focus {
   border-color: rgba(4, 4, 5, 0.4);
 }
 
-
 #title {
   padding-top: 32px;
 }
@@ -89,7 +93,7 @@ input:focus {
 
 #walletButton {
   text-align: center;
-  float:right;
+  float: right;
   margin-bottom: 50px;
   line-height: 16px;
   color: white;
