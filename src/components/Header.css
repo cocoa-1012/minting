@@ -6,13 +6,13 @@
   /* justify-content: center; */
 }
 .logoImageWrapper {
-  width: 150px;
+  width: 350px;
   height: 150px;
 }
 .logoImageWrapper img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 .headerText {
   flex: 1;
