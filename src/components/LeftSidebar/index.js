@@ -7,7 +7,7 @@ const LeftSidebar = ({ setSelected, items, items2 }) => {
   if (items.length < 0) return null;
   return (
     <div className='leftSidebar'>
-      <div className='sliderItemsWrapper d-flex gap-4'>
+      <div className='sliderItemsWrapper d-md-flex gap-4'>
         <CarouselContainer>
           {items.map((item) => (
             <div key={Math.random()} onClick={() => setSelected(item)}>
@@ -38,6 +38,7 @@ const settings = {
   renderIndicator: false,
   showArrows: false,
   showStatus: false,
+  showThumbs: false,
 };
 
 const CarouselContainer = ({ children }) => {
@@ -51,7 +52,7 @@ const CarouselContainer = ({ children }) => {
     );
   }
   return (
-    <Carousel {...settings} axis={'horizontal'} centerSlidePercentage={100}>
+    <Carousel {...settings} axis={'horizontal'} centerSlidePercentage={100 / 2}>
       {children}
     </Carousel>
   );
@@ -66,8 +67,9 @@ const CarouselContainer2 = ({ children }) => {
       </Carousel>
     );
   }
+
   return (
-    <Carousel {...settings} axis={'horizontal'} centerSlidePercentage={100}>
+    <Carousel {...settings} axis={'horizontal'} centerSlidePercentage={100 / 2}>
       {children}
     </Carousel>
   );
