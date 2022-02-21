@@ -1,14 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import ProgressBar from "../ProgressBar";
 
 const testData = { id: 0, current: 3690, total: 4444 };
 
 const Content = ({ selected, total, currentVal }) => {
   const [counter, setCounter] = useState(1);
-  useEffect(() => {
-    setCounter(selected.counter);
-  }, [selected.counter]);
-
   const increment = () => {
     setCounter((prev) => prev + 1);
   };
@@ -27,7 +23,6 @@ const Content = ({ selected, total, currentVal }) => {
           <div className="card__image">
             <img src={selected.image} alt="" />
           </div>
-          <p className="card__price">{selected.price / 10} ETH</p>
           <p className="card__text">220 MATIC</p>
           <div className="card__counter">
             <div className="card__counter-item" onClick={decrement}>
