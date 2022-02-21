@@ -1,13 +1,13 @@
-import React from 'react';
-import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
-import useInnerSize from '../../hook/useInnerSize';
-import Item from '../Items/Item';
-const LeftSidebar = ({ setSelected, items, items2 }) => {
+import React from "react";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import useInnerSize from "../../hook/useInnerSize";
+import Item from "../Items/Item";
+const LeftSidebar = ({ setSelected, items }) => {
   if (items.length < 0) return null;
   return (
-    <div className='leftSidebar'>
-      <div className='sliderItemsWrapper d-md-flex gap-4'>
+    <div className="leftSidebar">
+      <div className="sliderItemsWrapper d-md-flex gap-4">
         <CarouselContainer>
           {items.map((item) => (
             <div key={Math.random()} onClick={() => setSelected(item)}>
@@ -15,20 +15,13 @@ const LeftSidebar = ({ setSelected, items, items2 }) => {
             </div>
           ))}
         </CarouselContainer>
-        <CarouselContainer2>
-          {items2.map((item) => (
-            <div key={Math.random()} onClick={() => setSelected(item)}>
-              <Item img={item.image} />
-            </div>
-          ))}
-        </CarouselContainer2>
       </div>
     </div>
   );
 };
 
 const settings = {
-  verticalSwipe: 'natural',
+  verticalSwipe: "natural",
   interval: 1000,
   autoPlay: true,
   stopOnHover: true,
@@ -46,13 +39,13 @@ const CarouselContainer = ({ children }) => {
 
   if (width >= 768) {
     return (
-      <Carousel {...settings} axis={'vertical'} centerSlidePercentage={100 / 3}>
+      <Carousel {...settings} axis={"vertical"} centerSlidePercentage={100 / 3}>
         {children}
       </Carousel>
     );
   }
   return (
-    <Carousel {...settings} axis={'horizontal'} centerSlidePercentage={100 / 2}>
+    <Carousel {...settings} axis={"horizontal"} centerSlidePercentage={100 / 2}>
       {children}
     </Carousel>
   );
@@ -62,14 +55,14 @@ const CarouselContainer2 = ({ children }) => {
 
   if (width >= 768) {
     return (
-      <Carousel {...settings} axis={'vertical'} centerSlidePercentage={100 / 3}>
+      <Carousel {...settings} axis={"vertical"} centerSlidePercentage={100 / 3}>
         {children}
       </Carousel>
     );
   }
 
   return (
-    <Carousel {...settings} axis={'horizontal'} centerSlidePercentage={100 / 2}>
+    <Carousel {...settings} axis={"horizontal"} centerSlidePercentage={100 / 2}>
       {children}
     </Carousel>
   );
