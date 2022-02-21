@@ -89,6 +89,7 @@
   margin: 0px;
 }
 .card__text {
+  font-weight: bold;
   font-size: 20px;
   margin: 30px 0px;
 }
@@ -117,6 +118,7 @@
   background: #e91e63b5;
 }
 .card_counter-no {
+  font-weight: bold;
   font-size: 24px;
 }
 .card__minButton {

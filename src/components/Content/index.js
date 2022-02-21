@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ProgressBar from "../ProgressBar";
 
-const testData = { id: 0, current: 3690, total: 4444 };
+const testData = { id: 0, current: 3200, total: 4444 };
 
 const Content = ({ selected, total, currentVal }) => {
   const [counter, setCounter] = useState(1);
