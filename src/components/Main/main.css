@@ -89,8 +89,9 @@
   margin: 0px;
 }
 .card__text {
+  font-weight: bold;
   font-size: 20px;
-  margin: 0px;
+  margin: 30px 0px;
 }
 .card__counter {
   display: flex;
@@ -117,6 +118,7 @@
   background: #e91e63b5;
 }
 .card_counter-no {
+  font-weight: bold;
   font-size: 24px;
 }
 .card__minButton {

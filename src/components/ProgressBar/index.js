@@ -25,13 +25,13 @@ const ProgressBar = (props) => {
   };
 
   const labelStyles = {
-    width: 70,
-    height: 70,
+    width: 40,
+    height: 50,
     color: "white",
     fontWeight: "bold",
     backgroundImage: `url("../../images/flame.png")`,
     backgroundSize: "cover",
-    marginTop: -26,
+    marginTop: -15,
   };
 
   const totalVal = {
@@ -42,7 +42,7 @@ const ProgressBar = (props) => {
   const currentVal = {
     position: "absolute",
     bottom: 15,
-    right: 20,
+    right: 3,
   };
   return (
     <div style={containerStyles}>
