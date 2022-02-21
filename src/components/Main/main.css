@@ -128,7 +128,10 @@
   margin: auto;
   font-size: 20px;
 }
-
+.content {
+  padding-top: 25px;
+  height: 600px;
+}
 @media screen and (min-width: 768px) {
   .mainContent {
     display: flex;
@@ -137,7 +140,7 @@
     width: 50%;
   }
   .slider-wrapper {
-    height: 90vh !important;
+    height: 580px !important;
   }
   .sliderItem {
     width: 250px;
@@ -145,9 +148,6 @@
   }
   .cardData {
     padding-bottom: 5vh;
-  }
-  .content {
-    padding-top: 7vh;
   }
 }
 
