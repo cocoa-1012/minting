@@ -157,6 +157,9 @@
 .leftSidebar {
   margin-bottom: 20px;
 }
+.slider-wrapper {
+  height: 200px !important;
+}
 @media screen and (min-width: 768px) {
   .slider-wrapper {
     height: 570px !important;
