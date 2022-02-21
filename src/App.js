@@ -10,8 +10,9 @@ function App() {
         backgroundImage: `url(${bg})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        height: '100vh',
+        paddingBottom: 100,
       }}
+      className='app'
     >
       <Container className='text-center generalContainer'>
         <Main />
