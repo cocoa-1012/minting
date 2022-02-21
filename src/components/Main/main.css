@@ -13,7 +13,7 @@
 
 .mainContent {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   margin: auto;
   max-width: 1280px;
   padding-top: 120px;
@@ -21,25 +21,19 @@
   width: 100%;
 }
 
-.leftSidebar {
-  flex-basis: 30%;
-}
 .content {
-  max-width: 750px;
-  flex-basis: 70%;
+  /* max-width: 750px; */
   overflow: hidden;
 }
 .cardWrapper {
-  width: 90%;
-  max-width: 500px;
   background: #0d043061;
-  margin: auto;
   border-radius: 20px;
   padding: 20px 15px;
   border: 4px solid #efc169;
   color: #fff;
   height: 565px;
   position: relative;
+  width: 450px;
 }
 
 .card__tagName {
@@ -155,8 +149,6 @@
 .content {
   padding-top: 35px;
   height: 600px;
-  max-width: 750px;
-  min-width: 650px;
 }
 
 .leftSidebar {
@@ -214,11 +206,6 @@
   }
 }
 
-@media screen and (min-height: 800px) {
-  .app {
-    height: 100vh;
-  }
-}
 @media screen and (max-width: 768px) {
   .slider-wrapper {
     height: 250px !important;
@@ -226,6 +213,17 @@
   .mainContent {
     display: flex;
     flex-direction: column;
+    justify-content: center;
   }
+  .content {
+    display: flex;
+    justify-content: center;
 
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .cardWrapper{
+    max-width: 90%;
+  }
 }

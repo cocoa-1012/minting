@@ -39,11 +39,6 @@ const ProgressBar = (props) => {
     bottom: 15,
     right: 0,
   };
-  //   const initVal = {
-  //     position: "absolute",
-  //     bottom: 15,
-  //     left: 0,
-  //   };
   const currentVal = {
     position: "absolute",
     bottom: 15,
@@ -52,7 +47,6 @@ const ProgressBar = (props) => {
   return (
     <div style={containerStyles}>
       <p style={totalVal}>{total}</p>
-      {/* <p style={initVal}>0</p> */}
       <div style={fillerStyles}>
         <img src={flame} alt="%" style={labelStyles} />
         <p style={currentVal}>{current}</p>

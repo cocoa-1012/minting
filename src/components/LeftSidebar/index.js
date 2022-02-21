@@ -50,22 +50,5 @@ const CarouselContainer = ({ children }) => {
     </Carousel>
   );
 };
-const CarouselContainer2 = ({ children }) => {
-  const { width } = useInnerSize();
-
-  if (width >= 768) {
-    return (
-      <Carousel {...settings} axis={"vertical"} centerSlidePercentage={100 / 3}>
-        {children}
-      </Carousel>
-    );
-  }
-
-  return (
-    <Carousel {...settings} axis={"horizontal"} centerSlidePercentage={100 / 2}>
-      {children}
-    </Carousel>
-  );
-};
 
 export default LeftSidebar;
