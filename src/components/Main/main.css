@@ -160,6 +160,27 @@
 .slider-wrapper {
   height: 200px !important;
 }
+
+.sliderItemsWrapper > div {
+  position: relative;
+}
+.sliderItemsWrapper > div::before,
+.sliderItemsWrapper > div::after {
+  content: '';
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  z-index: 9999;
+}
+.sliderItemsWrapper > div::before {
+  background: linear-gradient(to top, #00000000, #000000);
+  top: 0;
+}
+.sliderItemsWrapper > div::after {
+  background: linear-gradient(to bottom, #00000000, #000000);
+  bottom: 0;
+}
 @media screen and (min-width: 768px) {
   .slider-wrapper {
     height: 570px !important;
