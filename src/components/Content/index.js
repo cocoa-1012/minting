@@ -3,7 +3,7 @@ import ProgressBar from "../ProgressBar";
 
 const testData = { id: 0, current: 3200, total: 4444 };
 
-const Content = ({ selected, total, currentVal }) => {
+const Content = ({ selected, total, currentVal, toggleMinter }) => {
   const [counter, setCounter] = useState(1);
   const increment = () => {
     setCounter((prev) => prev + 1);
@@ -39,14 +39,14 @@ const Content = ({ selected, total, currentVal }) => {
             total={testData.total}
             completed={testData.completed}
           />
-          <a
-            href="https://www.youtube.com/"
-            target="_blank"
+          <button
+            // target="_blank"
             className="card__minButton btn btn-success"
             rel="noreferrer"
+            onClick={toggleMinter}
           >
             mint
-          </a>
+          </button>
         </div>
       </div>
     </div>
