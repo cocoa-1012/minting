@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { Button } from "react-bootstrap";
+import unknowImage from "../../images/unknown.png";
+import { addToNetwork } from "../../util/interact.js";
 import ProgressBar from "../ProgressBar";
 
 const testData = { id: 0, current: 3200, total: 4444 };
@@ -14,6 +17,10 @@ const Content = ({ selected, total, currentVal, toggleMinter }) => {
     }
   };
 
+  const addToPolygonPressed = async () => {
+    const walletResponse = await addToNetwork();
+  };
+
   return (
     <div className="content">
       <div className="cardWrapper">
@@ -21,7 +28,7 @@ const Content = ({ selected, total, currentVal, toggleMinter }) => {
         <div className="card__content">
           <p className="card__name">{selected.name}</p>
           <div className="card__image">
-            <img src={selected.image} alt="" />
+            <img src={unknowImage} alt="" />
           </div>
           <p className="card__text">220 MATIC</p>
           <div className="card__counter">
@@ -39,8 +46,14 @@ const Content = ({ selected, total, currentVal, toggleMinter }) => {
             total={testData.total}
             completed={testData.completed}
           />
+          <Button
+            className="card__minButton1"
+            id="addPolygonButton"
+            onClick={addToPolygonPressed}
+          >
+            🦊Switch to Polygon network!
+          </Button>
           <button
-            // target="_blank"
             className="card__minButton btn btn-success"
             rel="noreferrer"
             onClick={toggleMinter}
