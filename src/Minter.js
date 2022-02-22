@@ -1,14 +1,11 @@
 import { useEffect, useState } from "react";
+import { Button, Card } from "react-bootstrap";
 import {
+  addToNetwork,
   connectWallet,
   getCurrentWalletConnected,
   mintNFT,
-  addToNetwork,
 } from "./util/interact.js";
-import {Button, Card} from 'react-bootstrap'
-
-
-
 
 const Minter = (props) => {
   const [walletAddress, setWallet] = useState("");
@@ -28,7 +25,7 @@ const Minter = (props) => {
   }, []);
 
   function addWalletListener() {
-    const isPhantomInstalled = window.solana && window.solana.isPhantom
+    const isPhantomInstalled = window.solana && window.solana.isPhantom;
     console.log(isPhantomInstalled);
     if (window.ethereum) {
       window.ethereum.on("accountsChanged", (accounts) => {
@@ -45,7 +42,11 @@ const Minter = (props) => {
         <p>
           {" "}
           🦊{" "}
-          <a target="_blank" href={`https://metamask.io/download.html`} rel="noreferrer">
+          <a
+            target="_blank"
+            href={`https://metamask.io/download.html`}
+            rel="noreferrer"
+          >
             You must install Metamask, a virtual Ethereum wallet, in your
             browser.
           </a>
@@ -74,38 +75,54 @@ const Minter = (props) => {
     const walletResponse = await addToNetwork();
   };
 
-
   return (
     <div className="Minter">
       <Card className="text-center">
-  <Card.Header> 
-     <p id="status">
-        {status}
-      </p>
-</Card.Header>
-  <Button className="btn btn-dark"id="addPolygonButton" onClick={addToPolygonPressed}>
-  🦊Switch to Polygon network!
-      </Button> 
-  <Button  variant="warning" id="walletButton" onClick={connectWalletPressed}>
-        {walletAddress.length > 0 ? (
-          "Connected: " +
-          String(walletAddress).substring(0, 6) +
-          "..." +
-          String(walletAddress).substring(38)
-        ) : (
-          <span>Connect Wallet</span>
-        )}
-      </Button>
-  <Card.Body>
-    
-    <Card.Title>For this test please make sure to be on Polygon's test network(Mumbai)</Card.Title>
-    <Card.Img variant="top" src="https://cdn.discordapp.com/attachments/619998912165445642/931990564621127720/mistery.png" />
-    <Button className="btn btn-dark"id="mintButton" onClick={onMintPressed}>
-        Mint mystery owl
-      </Button> 
-  </Card.Body>
-  <Card.Footer className="text-muted">4444[Insert counting logic here?] unique nfts available!</Card.Footer>
-</Card>
+        <Card.Header>
+          <p id="status">{status}</p>
+        </Card.Header>
+        <Button
+          className="btn btn-dark"
+          id="addPolygonButton"
+          onClick={addToPolygonPressed}
+        >
+          🦊Switch to Polygon network!
+        </Button>
+        <Button
+          variant="warning"
+          id="walletButton"
+          onClick={connectWalletPressed}
+        >
+          {walletAddress.length > 0 ? (
+            "Connected: " +
+            String(walletAddress).substring(0, 6) +
+            "..." +
+            String(walletAddress).substring(38)
+          ) : (
+            <span>Connect Wallet</span>
+          )}
+        </Button>
+        <Card.Body>
+          <Card.Title>
+            For this test please make sure to be on Polygon's test
+            network(Mumbai)
+          </Card.Title>
+          <Card.Img
+            variant="top"
+            src="https://cdn.discordapp.com/attachments/619998912165445642/931990564621127720/mistery.png"
+          />
+          <Button
+            className="btn btn-dark"
+            id="mintButton"
+            onClick={onMintPressed}
+          >
+            Mint mystery owl
+          </Button>
+        </Card.Body>
+        <Card.Footer className="text-muted">
+          4444[Insert counting logic here?] unique nfts available!
+        </Card.Footer>
+      </Card>
     </div>
   );
 };

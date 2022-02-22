@@ -1,18 +1,8 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import React, { useState } from "react";
-import { Container } from "react-bootstrap";
+import React from "react";
 import Main from "./components/Main";
 import bg from "./images/content-bg.png";
-import Minter from "./Minter";
 function App() {
-  const [isMinter, setIsMinter] = useState(false);
-  if (isMinter) {
-    return (
-      <Container className="text-center generalContainer">
-        <Minter />
-      </Container>
-    );
-  }
   return (
     <div
       style={{
@@ -23,7 +13,7 @@ function App() {
       }}
       className="app"
     >
-      <Main toggleMinter={() => setIsMinter(!isMinter)} />
+      <Main />
     </div>
   );
 }
