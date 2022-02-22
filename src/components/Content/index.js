@@ -10,7 +10,7 @@ import ProgressBar from "../ProgressBar";
 
 const testData = { id: 0, current: 3200, total: 4444 };
 
-const Content = ({ selected, total, currentVal, toggleMinter }) => {
+const Content = () => {
   const [walletAddress, setWallet] = useState("");
   const [status, setStatus] = useState("");
 
@@ -88,7 +88,6 @@ const Content = ({ selected, total, currentVal, toggleMinter }) => {
       <div className="cardWrapper">
         <p className="card__tagName">MINT YOUR MAJESTIC OWL</p>
         <div className="card__content">
-          {/* <p className="card__name">{selected.name}</p> */}
           <div className="card__image">
             <img src={unknowImage} alt="" />
           </div>
@@ -106,15 +105,7 @@ const Content = ({ selected, total, currentVal, toggleMinter }) => {
             key={testData.id}
             current={testData.current}
             total={testData.total}
-            completed={testData.completed}
           />
-          {/* <Button
-            className="card__minButton1"
-            id="addPolygonButton"
-            onClick={addToPolygonPressed}
-          >
-            🦊Switch to Polygon network!
-          </Button> */}
           <button
             className="card__minButton btn btn-success"
             rel="noreferrer"
