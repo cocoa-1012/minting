@@ -24,7 +24,7 @@ const settings = {
   verticalSwipe: "natural",
   interval: 1000,
   autoPlay: true,
-  stopOnHover: true,
+  stopOnHover: false,
   centerMode: true,
   infiniteLoop: true,
   labels: false,

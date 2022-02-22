@@ -66,7 +66,7 @@
   border-radius: 20px;
   overflow: hidden;
   margin-bottom: 20px;
-  margin-top: 20px;
+  margin-top: 50px;
   border: 2px solid #efc169;
 }
 .card__image img {
@@ -213,6 +213,12 @@
   margin-top: 20px;
   background-image: linear-gradient(to right, rgba(236, 183, 247, 1), rgb(237, 213, 241), rgb(214, 207, 102), rgb(231, 149, 41), rgb(252, 84, 55));
   border-radius: 5px;
+}
+.how_to_mint {
+  text-transform: initial;
+  margin: 30px 30px;
+  align-items: center;
+  font-style: italic;
 }
 @media screen and (min-width: 768px) {
   .slider-wrapper {
