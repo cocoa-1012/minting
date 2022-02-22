@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import unknowImage from "../../images/unknown.png";
 import {
   addToNetwork,
@@ -68,8 +68,27 @@ const Content = () => {
   };
 
   const onMintPressed = async () => {
-    const { success, status } = await mintNFT(amount);
-    setStatus(status);
+    // const { success, status } = await mintNFT(amount);
+    // setStatus(status);
+
+    if (window.ethereum.networkVersion != 0x89) {
+      const nres = await addToNetwork();
+      // setStatus(nres.status);
+    }
+
+    const res = await getCurrentWalletConnected();
+    if (res.address != "") {
+      console.log("connected");
+      setWallet(res.address);
+    } else {
+      setStatus(res.status);
+      const wres = await connectWallet();
+      setStatus(wres.status);
+      setWallet(wres.address);
+    }
+
+    await mintNFT(1);
+
     /*if (success) {
       setName("");
       setDescription("");
@@ -77,12 +96,13 @@ const Content = () => {
     }*/
   };
 
-  useEffect(async () => {
-    const { address, status } = await getCurrentWalletConnected();
-    setWallet(address);
-    setStatus(status);
-    addWalletListener();
-  }, []);
+  // useEffect(async () => {
+  //   const { address, status } = await getCurrentWalletConnected();
+  //   setWallet(address);
+  //   setStatus(status);
+  //   addWalletListener();
+  // }, []);
+
   return (
     <div className="content">
       <div className="cardWrapper">
