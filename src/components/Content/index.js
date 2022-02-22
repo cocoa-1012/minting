@@ -1,9 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import unknowImage from "../../images/unknown.png";
+import {
+  addToNetwork,
+  connectWallet,
+  getCurrentWalletConnected,
+  mintNFT,
+} from "../../util/interact.js";
 import ProgressBar from "../ProgressBar";
 
 const testData = { id: 0, current: 3200, total: 4444 };
 
-const Content = ({ selected, total, currentVal }) => {
+const Content = () => {
+  const [walletAddress, setWallet] = useState("");
+  const [status, setStatus] = useState("");
+
+  const [amount, setAmount] = useState(1);
+
   const [counter, setCounter] = useState(1);
   const increment = () => {
     setCounter((prev) => prev + 1);
@@ -14,14 +26,70 @@ const Content = ({ selected, total, currentVal }) => {
     }
   };
 
+  const addToPolygonPressed = async () => {
+    const walletResponse = await addToNetwork();
+  };
+
+  const addWalletListener = () => {
+    const isPhantomInstalled = window.solana && window.solana.isPhantom;
+    console.log(isPhantomInstalled);
+    if (window.ethereum) {
+      window.ethereum.on("accountsChanged", (accounts) => {
+        if (accounts.length > 0) {
+          setWallet(accounts[0]);
+          setStatus("👆🏽 Write a message in the text-field above.");
+        } else {
+          setWallet("");
+          setStatus("🦊 Connect to Metamask using the top right button.");
+        }
+      });
+    } else {
+      setStatus(
+        <p>
+          {" "}
+          🦊{" "}
+          <a
+            target="_blank"
+            href={`https://metamask.io/download.html`}
+            rel="noreferrer"
+          >
+            You must install Metamask, a virtual Ethereum wallet, in your
+            browser.
+          </a>
+        </p>
+      );
+    }
+  };
+
+  const connectWalletPressed = async () => {
+    const walletResponse = await connectWallet();
+    setStatus(walletResponse.status);
+    setWallet(walletResponse.address);
+  };
+
+  const onMintPressed = async () => {
+    const { success, status } = await mintNFT(amount);
+    setStatus(status);
+    /*if (success) {
+      setName("");
+      setDescription("");
+      setURL("");
+    }*/
+  };
+
+  useEffect(async () => {
+    const { address, status } = await getCurrentWalletConnected();
+    setWallet(address);
+    setStatus(status);
+    addWalletListener();
+  }, []);
   return (
     <div className="content">
       <div className="cardWrapper">
         <p className="card__tagName">MINT YOUR MAJESTIC OWL</p>
         <div className="card__content">
-          <p className="card__name">{selected.name}</p>
           <div className="card__image">
-            <img src={selected.image} alt="" />
+            <img src={unknowImage} alt="" />
           </div>
           <p className="card__text">220 MATIC</p>
           <div className="card__counter">
@@ -37,16 +105,21 @@ const Content = ({ selected, total, currentVal }) => {
             key={testData.id}
             current={testData.current}
             total={testData.total}
-            completed={testData.completed}
           />
-          <a
-            href="https://www.youtube.com/"
-            target="_blank"
+          <button
             className="card__minButton btn btn-success"
             rel="noreferrer"
+            onClick={onMintPressed}
           >
             mint
-          </a>
+          </button>
+          <p className="how_to_mint">
+            If you don't know how to mint with Matic check this &nbsp;
+            <a href="https://youtube.com" alt="howto">
+              video
+            </a>
+            .
+          </p>
         </div>
       </div>
     </div>

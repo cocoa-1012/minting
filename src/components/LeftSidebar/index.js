@@ -3,14 +3,14 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import useInnerSize from "../../hook/useInnerSize";
 import Item from "../Items/Item";
-const LeftSidebar = ({ setSelected, items }) => {
+const LeftSidebar = ({ items }) => {
   if (items.length < 0) return null;
   return (
     <div className="leftSidebar">
       <div className="sliderItemsWrapper d-md-flex gap-4">
         <CarouselContainer>
           {items.map((item) => (
-            <div key={Math.random()} onClick={() => setSelected(item)}>
+            <div key={Math.random()}>
               <Item img={item.image} />
             </div>
           ))}
@@ -22,9 +22,9 @@ const LeftSidebar = ({ setSelected, items }) => {
 
 const settings = {
   verticalSwipe: "natural",
-  interval: 1000,
+  interval: 1500,
   autoPlay: true,
-  stopOnHover: true,
+  stopOnHover: false,
   centerMode: true,
   infiniteLoop: true,
   labels: false,

@@ -67,8 +67,7 @@ const ITEMS = [
   },
 ];
 
-const Main = () => {
-  const [selected, setSelected] = useState(ITEMS[0]);
+const Main = ({ toggleMinter }) => {
   // eslint-disable-next-line no-unused-vars
   const [items, setItems] = useState([]);
   useEffect(() => {
@@ -79,8 +78,8 @@ const Main = () => {
     <div>
       <Header />
       <div className="mainContent text-center generalContainer">
-        <LeftSidebar setSelected={setSelected} items={ITEMS} />
-        <Content selected={selected} />
+        <LeftSidebar items={ITEMS} />
+        <Content toggleMinter={toggleMinter} />
       </div>
     </div>
   );
