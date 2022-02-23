@@ -90,7 +90,7 @@ const Content = () => {
 
     const supply = await getSupply();
     console.log(supply);
-    await mintNFT(1);
+    await mintNFT(counter);
     getCurrentSupply();
 
     /*if (success) {
