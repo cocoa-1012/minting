@@ -117,6 +117,11 @@ export const mintNFT = async (amount) => {
   }
 };
 
+export const getSupply = async () => {
+  const res = await window.contract.methods.totalSupply().call();
+  return res;
+};
+
 export const getCurrentWalletConnected = async () => {
   //load smart contract
   window.contract = await new web3.eth.Contract(contractABI, contractAddress); //loadContract();
