@@ -1,19 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import unknowImage from "../../images/unknown.png";
 import {
   addToNetwork,
   connectWallet,
   getCurrentWalletConnected,
+  getSupply,
   mintNFT,
 } from "../../util/interact.js";
 import ProgressBar from "../ProgressBar";
 
-const testData = { id: 0, current: 3200, total: 4444 };
+const testData = { id: 0, current: 2655, total: 4444 };
 
 const Content = () => {
   const [walletAddress, setWallet] = useState("");
   const [status, setStatus] = useState("");
-
+  const [currentSupply, setCurrentSupply] = useState(0);
   const [amount, setAmount] = useState(1);
 
   const [counter, setCounter] = useState(1);
@@ -87,7 +88,10 @@ const Content = () => {
       setWallet(wres.address);
     }
 
+    const supply = await getSupply();
+    console.log(supply);
     await mintNFT(1);
+    getCurrentSupply();
 
     /*if (success) {
       setName("");
@@ -96,12 +100,35 @@ const Content = () => {
     }*/
   };
 
-  // useEffect(async () => {
-  //   const { address, status } = await getCurrentWalletConnected();
-  //   setWallet(address);
-  //   setStatus(status);
-  //   addWalletListener();
-  // }, []);
+  const getCurrentSupply = async () => {
+    if (window.ethereum.networkVersion != 0x89) {
+      const nres = await addToNetwork();
+      // setStatus(nres.status);
+    }
+
+    const res = await getCurrentWalletConnected();
+    if (res.address != "") {
+      console.log("connected");
+      setWallet(res.address);
+    } else {
+      setStatus(res.status);
+      const wres = await connectWallet();
+      setStatus(wres.status);
+      setWallet(wres.address);
+    }
+
+    const supply = await getSupply();
+    setCurrentSupply(supply);
+    console.log(supply);
+  };
+
+  useEffect(async () => {
+    // const { address, status } = await getCurrentWalletConnected();
+    // setWallet(address);
+    // setStatus(status);
+    // addWalletListener();
+    getCurrentSupply();
+  }, []);
 
   return (
     <div className="content">
@@ -123,7 +150,8 @@ const Content = () => {
           </div>
           <ProgressBar
             key={testData.id}
-            current={testData.current}
+            current={currentSupply}
+            // current={testData.current}
             total={testData.total}
           />
           <button
