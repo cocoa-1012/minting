@@ -1,4 +1,4 @@
-# Minting Dapp for Majestic owl (still in dev)
+# Minting Dapp for Majestic owl
 
 
 ## Use NPM :
