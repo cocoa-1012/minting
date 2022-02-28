@@ -35,6 +35,21 @@
   position: relative;
   width: 450px;
 }
+.prepage {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  align-items: center;
+  justify-content: space-between;
+  background: #05050561;
+  border-radius: 20px;
+  padding: 20px 15px;
+  border: 6px solid #bd8b2b;
+  color: #fff;
+  height: 565px;
+  position: relative;
+  width: 450px;
+}
 
 .card__tagName {
   position: absolute;
@@ -75,6 +90,16 @@
   margin-top: 5px;
   object-fit: contain;
 }
+.logo_image {
+  width: 90%;
+  margin: auto;
+  overflow: hidden;
+}
+.logo_image img {
+  width: 100%;
+  height: 100%;
+}
+
 .card__name {
   font-size: 26px;
   text-transform: uppercase;
@@ -93,6 +118,12 @@
   font-weight: bold;
   font-size: 20px;
   margin: 20px 0px;
+}
+.prepage_text {
+  text-align: center;
+  font-weight: 600;
+  font-size: 20px;
+  /* margin: 20px 0px; */
 }
 .card__counter {
   display: flex;
@@ -149,7 +180,61 @@
   text-shadow: 0 0 5px #000;
   font-family: monospace;
 }
-
+.prepage__minButton {
+  width: 160px;
+  height: 40px;
+  margin: 0 10px;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  letter-spacing: 2px;
+  border: 2px;
+  border-radius: 15px;
+  background-color: transparent;
+  background-image: linear-gradient(
+    170deg,
+    #efc169 4%,
+    #554522 51%,
+    #d19f3e 99%
+  );
+  box-shadow: 1px 1px 15px 0 #09041a;
+  transition: width 0.2s ease, font-size 0.2s ease, height 0.2s ease,
+    width 0.2s ease, text-shadow 0.2s ease, box-shadow 0.2s ease;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-shadow: 0 0 5px #000;
+  font-family: monospace;
+}
+.prepage__mintAnchor {
+  display: none;
+  width: 160px;
+  height: 40px;
+  margin: 0 10px;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  letter-spacing: 2px;
+  border: 2px;
+  border-radius: 15px;
+  background-color: transparent;
+  background-image: linear-gradient(
+    170deg,
+    #efc169 4%,
+    #554522 51%,
+    #d19f3e 99%
+  );
+  box-shadow: 1px 1px 15px 0 #09041a;
+  transition: width 0.2s ease, font-size 0.2s ease, height 0.2s ease,
+    width 0.2s ease, text-shadow 0.2s ease, box-shadow 0.2s ease;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-shadow: 0 0 5px #000;
+  font-family: monospace;
+}
 .card__minButton1 {
   width: 400px;
   height: 40px;
@@ -181,7 +266,10 @@
   padding-top: 35px;
   height: 600px;
 }
-
+.prepage__content {
+  height: 92vh;
+  padding: 100px;
+}
 .leftSidebar {
   margin-bottom: 20px;
 }
@@ -244,6 +332,19 @@
 }
 
 @media screen and (max-width: 768px) {
+  .prepage__content {
+    height: 100vh;
+    padding: 100px 0px;
+  }
+  .prepage__minButton {
+    display: none;
+  }
+  .prepage__mintAnchor {
+    display: flex;
+  }
+  .prepage {
+    width: 90%;
+  }
   .slider-wrapper {
     height: 250px !important;
   }

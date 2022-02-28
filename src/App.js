@@ -1,8 +1,10 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import React from "react";
+import React, { useState } from "react";
 import Main from "./components/Main";
+import Prepage from "./components/Prepage";
 import bg from "./images/content-bg.png";
 function App() {
+  const [isMint, setIsMint] = useState(false);
   return (
     <div
       style={{
@@ -13,7 +15,7 @@ function App() {
       }}
       className="app"
     >
-      <Main />
+      {isMint ? <Main /> : <Prepage setIsMint={setIsMint} />}
     </div>
   );
 }
