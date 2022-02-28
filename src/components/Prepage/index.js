@@ -3,7 +3,8 @@ import logoImage from "../../images/logo.png";
 
 const mint = (e) => {
   e.preventDefault();
-  window.location.href = "https://www.privatediamond.majesticowl.io/";
+  window.location.href =
+    "https://metamask.app.link/dapp/www.privatediamond.majesticowl.io/";
 };
 
 const Prepage = ({ setIsMint }) => {
