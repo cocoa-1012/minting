@@ -94,20 +94,28 @@ const Content = () => {
             .
           </p>
           {/* <p>&#9989; &nbsp;Verified Contract</p> */}
-          <p>
+          <p
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
             <span
               style={{
+                fontSize: 10,
                 color: "#fff",
                 fontWeight: "bolder",
                 background: "#6c99f6",
                 borderRadius: "50%",
-                border: "solid 3px #cad6e4",
-                padding: "1px 4px",
+                border: "solid 2px #cad6e4",
+                padding: "0px 4px",
+                marginBottom: 2,
               }}
             >
               &#128504;
-            </span>{" "}
-            &nbsp;Verified Contract
+            </span>
+            &nbsp; &nbsp;Verified Contract
           </p>
         </div>
       </div>
