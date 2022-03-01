@@ -93,6 +93,22 @@ const Content = () => {
             </a>
             .
           </p>
+          {/* <p>&#9989; &nbsp;Verified Contract</p> */}
+          <p>
+            <span
+              style={{
+                color: "#fff",
+                fontWeight: "bolder",
+                background: "#6c99f6",
+                borderRadius: "50%",
+                border: "solid 3px #cad6e4",
+                padding: "1px 4px",
+              }}
+            >
+              &#128504;
+            </span>{" "}
+            &nbsp;Verified Contract
+          </p>
         </div>
       </div>
     </div>
