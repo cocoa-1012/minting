@@ -10,6 +10,7 @@ import img7 from "../../images/7.png";
 import img8 from "../../images/8.png";
 import img9 from "../../images/9.png";
 import Content from "../Content";
+import Footer from "../Footer";
 import Header from "../Header";
 import LeftSidebar from "../LeftSidebar";
 import "./main.css";
@@ -81,6 +82,7 @@ const Main = ({ toggleMinter }) => {
         <LeftSidebar items={ITEMS} />
         <Content toggleMinter={toggleMinter} />
       </div>
+      <Footer />
     </div>
   );
 };

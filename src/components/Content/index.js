@@ -7,7 +7,6 @@ import {
   getSupply,
   mintNFT,
 } from "../../util/interact.js";
-import ProgressBar from "../ProgressBar";
 
 const totalSupply = process.env.REACT_APP_TOTAL_SUPPLY;
 
@@ -79,7 +78,7 @@ const Content = () => {
             </div>
           </div>
 
-          <ProgressBar current={currentSupply} total={totalSupply} />
+          {/* <ProgressBar current={currentSupply} total={totalSupply} /> */}
           <button
             className="card__minButton btn btn-success"
             rel="noreferrer"
