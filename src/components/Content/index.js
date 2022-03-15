@@ -7,7 +7,6 @@ import {
   getSupply,
   mintNFT,
 } from "../../util/interact.js";
-import ProgressBar from "../ProgressBar";
 
 const totalSupply = process.env.REACT_APP_TOTAL_SUPPLY;
 
@@ -79,7 +78,7 @@ const Content = () => {
             </div>
           </div>
 
-          <ProgressBar current={currentSupply} total={totalSupply} />
+          {/* <ProgressBar current={currentSupply} total={totalSupply} /> */}
           <button
             className="card__minButton btn btn-success"
             rel="noreferrer"
@@ -93,6 +92,30 @@ const Content = () => {
               video
             </a>
             .
+          </p>
+          {/* <p>&#9989; &nbsp;Verified Contract</p> */}
+          <p
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <span
+              style={{
+                fontSize: 10,
+                color: "#fff",
+                fontWeight: "bolder",
+                background: "#6c99f6",
+                borderRadius: "50%",
+                border: "solid 2px #cad6e4",
+                padding: "0px 4px",
+                marginBottom: 2,
+              }}
+            >
+              &#128504;
+            </span>
+            &nbsp; &nbsp;Verified Contract
           </p>
         </div>
       </div>

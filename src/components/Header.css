@@ -27,6 +27,32 @@
   font-family: 'Roboto', sans-serif;
   text-transform: uppercase;
 }
+.footer {
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 100%;
+  margin-top: 50px;
+  align-items: center;
+  background: #100e0c;
+  box-shadow: 0 0 10px #855b1f;
+  z-index: 999;
+}
+/* .footerlogo {
+  background: url("../images/icons/logofull.png") no-repeat center;
+  background-size: contain;
+  height: 30vh;
+} */
+
+.footerdetail {
+  margin: 20px 0px 0px 0px;
+}
+.footer p {
+  color: #fff;
+  font-weight: 700;
+  padding: 10px 0px;
+  margin: 0;
+}
 
 @media screen and (max-width: 768px) {
   .logoImageWrapper {

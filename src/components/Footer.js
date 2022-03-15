@@ -1,14 +1,16 @@
-import React from 'react'
-
+import "./Header.css";
 
 function Footer() {
-    return (
-        <footer class="mastfoot mt-auto">
-        <div class="inner">
-          <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-        </div>
-      </footer>
-    )
+  return (
+    <footer className="footer">
+      {/* <div className="footerlogo"></div> */}
+      <div className="footerdetail">
+        {/* <p>CONTACT : contact@majesticowl.io</p> */}
+        <p>Copyright &copy; 2022 Majestic Owl.</p>
+        <p>All rights reserved.</p>
+      </div>
+    </footer>
+  );
 }
 
-export default Footer
+export default Footer;

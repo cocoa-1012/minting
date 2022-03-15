@@ -4,14 +4,13 @@ import Main from "./components/Main";
 import Prepage from "./components/Prepage";
 import bg from "./images/content-bg.png";
 function App() {
-  const [isMint, setIsMint] = useState(false);
+  const [isMint, setIsMint] = useState(true);
   return (
     <div
       style={{
         backgroundImage: `url(${bg})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        paddingBottom: 60,
       }}
       className="app"
     >
